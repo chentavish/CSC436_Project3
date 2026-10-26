@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   const { data: pokemon, loading, error, retry } = useFetch(
-    'https://pokeapi.co/api/v2/pokemon/pikachu'
+    'https://pokeapi.co/api/v2/pokemon/pikachi'
   );
 
   return (
