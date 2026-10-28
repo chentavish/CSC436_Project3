@@ -7,6 +7,7 @@ function useFetch(url) {
   const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
+    let ignore = false;
     setLoading(true);
     setError(null);
 
@@ -17,9 +18,19 @@ function useFetch(url) {
         }
         return response.json();
       })
-      .then((json) => setData(json))
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+      .then((json) => {
+        if (!ignore) setData(json);
+      })
+      .catch((err) => {
+        if (!ignore) setError(err.message);
+      })
+      .finally(() => {
+        if (!ignore) setLoading(false);
+      });
+
+    return () => {
+      ignore = true;
+    };
   }, [url, retryCount]);
 
   function retry() {

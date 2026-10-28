@@ -1,15 +1,19 @@
+import { useState } from 'react';
 import Header from './components/Header';
+import PokemonPicker from './components/PokemonPicker';
 import useFetch from './hooks/useFetch';
 import './App.css';
 
 function App() {
+  const [selected, setSelected] = useState('pikachu');
   const { data: pokemon, loading, error, retry } = useFetch(
-    'https://pokeapi.co/api/v2/pokemon/pikachi'
+    `https://pokeapi.co/api/v2/pokemon/${selected}`
   );
 
   return (
     <div className="app">
       <Header />
+      <PokemonPicker selected={selected} onSelect={setSelected} />
       {loading && <p>Loading...</p>}
       {error && (
         <div>
