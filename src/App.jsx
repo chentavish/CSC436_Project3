@@ -29,7 +29,7 @@ function App() {
       {loading && <p>Loading...</p>}
       {error && (
         <div>
-          <p>Couldn't load Pokémon: {error}</p>
+          <p>Couldn't load this Pokémon. Check your connection and try again.</p>
           <button onClick={retry}>Try again</button>
         </div>
       )}

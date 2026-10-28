@@ -14,7 +14,7 @@ function PokemonPicker({ selected, onSelect }) {
   if (error) {
     return (
       <div>
-        <p>Couldn't load the Pokémon list: {error}</p>
+        <p>Couldn't load the Pokémon list. Check your connection and try again.</p>
         <button onClick={retry}>Try again</button>
       </div>
     );
