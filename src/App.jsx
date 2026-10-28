@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import TrainerForm from './components/TrainerForm';
+import SizeCompare from './components/SizeCompare';
 import PokemonPicker from './components/PokemonPicker';
 import useFetch from './hooks/useFetch';
 import './App.css';
@@ -25,8 +26,6 @@ function App() {
         onFeetChange={setFeet}
         onInchesChange={setInches}
       />
-      
-      <PokemonPicker selected={selected} onSelect={setSelected} />
       {loading && <p>Loading...</p>}
       {error && (
         <div>
@@ -35,11 +34,9 @@ function App() {
         </div>
       )}
       {pokemon && !loading && !error && (
-        <div>
-          <h2>{pokemon.name}</h2>
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-        </div>
+        <SizeCompare pokemon={pokemon} gender={gender} feet={feet} inches={inches} />
       )}
+      <PokemonPicker selected={selected} onSelect={setSelected} />
     </div>
   );
 }

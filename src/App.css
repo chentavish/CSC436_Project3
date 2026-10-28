@@ -1,0 +1,31 @@
+.size-compare {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 3rem;
+    min-height: 380px;
+    padding: 1rem;
+    border-bottom: 3px solid #555;
+  }
+  
+  .figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+  }
+  
+  .figure figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .figure strong {
+    text-transform: capitalize;
+  }
+  
+  .trainer {
+    image-rendering: pixelated;
+  }
