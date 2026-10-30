@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Pixelify+Sans:wght@500;700&display=swap');
+
+:root {
+  --page: #e6eaec;        /* page background behind the device */
+  --casing: #24505c;      /* device body */
+  --casing-edge: #163640; /* darker device edge and screen borders */
+  --screen: #e2efe7;      /* screen background */
+  --screen-line: #b8d2c5; /* foot lines and button borders */
+  --button: #f3f9f5;      /* Pokémon buttons on the screen */
+  --ink: #1b3530;         /* main text */
+  --muted: #4d6660;       /* secondary text */
+  --accent: #f2b33d;      /* selected Pokémon */
+  --ground: #5f8a45;      /* grass line the figures stand on */
+  --error: #b3261e;       /* error messages */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--page);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--casing-edge);
+  outline-offset: 2px;
+}
