@@ -12,13 +12,13 @@ function PokemonPicker({ selected, onSelect }) {
   );
 
   if (loading) {
-    return <p className="loading">Loading Pokémon list...</p>;
+    return <p className="loading" role="status">Loading Pokémon list...</p>;
   }
 
   // list failed to load, let the user retry
   if (error) {
     return (
-      <div className="error">
+      <div className="error" role="alert">
         <p>Couldn't load the Pokémon list. Check your connection and try again.</p>
         <button onClick={retry}>Try again</button>
       </div>
@@ -50,7 +50,10 @@ function PokemonPicker({ selected, onSelect }) {
                 <button
                   // highlight the selected pokemon
                   className={pokemon.name === selected ? 'selected' : ''}
-                  onClick={() => onSelect(pokemon.name)} >
+                  // tells screen readers which one is selected
+                  aria-pressed={pokemon.name === selected}
+                  onClick={() => onSelect(pokemon.name)}
+                >
                   <img
                     src={`${SPRITE_URL}/${id}.png`}
                     // empty alt since the name is right below

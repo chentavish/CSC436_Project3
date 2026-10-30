@@ -14,7 +14,7 @@ function App() {
   const [selected, setSelected] = useState('pikachu'); // pokemon shown first
   const { data: pokemon, loading, error, retry } = useFetch(
     `https://pokeapi.co/api/v2/pokemon/${selected}`
-); 
+  );
   return (
     <div className="app">
       <Header />
@@ -30,10 +30,10 @@ function App() {
           />
         </div>
         <div className="stage-area">
-          {loading && <p className="loading">Loading Pokémon...</p>}
+          {loading && <p className="loading" role="status">Loading Pokémon...</p>}
           {/* fetch failed, let the user retry */}
           {error && (
-            <div className="error">
+            <div className="error" role="alert">
               <p>Couldn't load this Pokémon. Check your connection and try again.</p>
               <button onClick={retry}>Try again</button>
             </div>
