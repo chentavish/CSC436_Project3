@@ -52,7 +52,6 @@
   image-rendering: pixelated;
 }
 
-.scale-note,
 .empty {
   margin: 0.75rem 0 0;
   font-size: 0.85rem;
@@ -339,13 +338,6 @@
   color: var(--muted);
 }
 
-/* Footer */
-.footer {
-  margin-top: 1.5rem;
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
 /* Desktop: fit everything on one screen */
 @media (min-width: 820px) {
   .app {
@@ -396,9 +388,5 @@
 
   .stage-area {
     min-height: 0;
-  }
-
-  .footer {
-    margin-top: 0.75rem;
   }
 }

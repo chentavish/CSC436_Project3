@@ -15,17 +15,18 @@ function SizeCompare({ pokemon, gender, feet, inches }) {
   const trainerInches = Number(feet) * 12 + Number(inches); // your height in inches
   const pokemonInches = pokemon.height * INCHES_PER_DECIMETER; // pokemon height in inches
 
-  // no height entered yet
-  if (trainerInches <= 0) {
-    return <p>Enter your height to see how you compare.</p>;
+  // no height entered, or outside 1 ft 0 in to 8 ft 11 in
+  if (Number(feet) < 1 || Number(feet) > 8 || Number(inches) < 0 || Number(inches) > 11) {
+    return <p className="empty">Enter a height between 1 ft 0 in and 8 ft 11 in.</p>;
   }
 
   const tallest = Math.max(trainerInches, pokemonInches); // the taller one fills the stage
   const trainerPx = (trainerInches / tallest) * STAGE_HEIGHT; // your height in px
   const pokemonPx = (pokemonInches / tallest) * STAGE_HEIGHT; // pokemon height in px
+  const footPx = (12 / tallest) * STAGE_HEIGHT; // space between the 1 foot lines
 
   return (
-    <section className="size-compare">
+    <section className="size-compare" style={{ '--foot': `${footPx}px` }}>
       {/* character size */}
       <figure className="figure">
         <figcaption>
