@@ -3,7 +3,7 @@ function TrainerForm({ gender, feet, inches, onGenderChange, onFeetChange, onInc
       <section className="trainer-form">
         <h2>Your character</h2>
         <fieldset>
-          <legend>Gendar</legend>
+          <legend>Gender</legend>
           <label>
             <input
               type="radio"

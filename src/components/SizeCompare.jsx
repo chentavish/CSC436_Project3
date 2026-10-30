@@ -26,7 +26,7 @@ function SizeCompare({ pokemon, gender, feet, inches }) {
 
   return (
     <section className="size-compare">
-      {/* caharacter size */}
+      {/* character size */}
       <figure className="figure">
         <figcaption>
           <strong>You</strong>

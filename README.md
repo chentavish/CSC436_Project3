@@ -1,16 +1,30 @@
-# React + Vite
+# Pokémon Size Compare
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A React app for seeing how you'd measure up next to a Pokémon. Create your trainer, enter your height, and pick any of the original 151 Pokémon to see the two of you side by side at real scale.
 
-Currently, two official plugins are available:
+Live site: 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Create your character:** choose a male or female trainer and enter your height in feet and inches.
+- **Size comparison:** your trainer and the Pokémon are drawn to scale, with both heights listed above them.
+- **Search:** filter the Pokémon list by name as you type.
+- **Pokédex info:** each Pokémon shows its number, type and weight.
+- **Loading and error states:** a spinner shows while data loads, and if a request fails you get a message with a Try again button.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run it locally
 
-## Expanding the Oxlint configuration
+You'll need Node.js installed.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```bash
+git clone https://github.com/chentavish/CSC436_Project3
+cd CSC436_Project3
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173.
+
+## Built with
+
+React and Vite, with data from [PokéAPI](https://pokeapi.co/). Deployed on Netlify.
