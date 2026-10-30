@@ -6,10 +6,17 @@ function useFetch(url) {
   const [error, setError] = useState(null);
   const [retryCount, setRetryCount] = useState(0);
 
-  useEffect(() => {
-    let ignore = false;
+  // a new url or a retry means a new request, so reset right away
+  const request = `${url}#${retryCount}`;
+  const [lastRequest, setLastRequest] = useState(request);
+  if (request !== lastRequest) {
+    setLastRequest(request);
     setLoading(true);
     setError(null);
+  }
+
+  useEffect(() => {
+    let ignore = false;
 
     fetch(url)
       .then((response) => {
